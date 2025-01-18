@@ -33,9 +33,13 @@ footer {
 }
 
 .container nav {
-  width: 1150px;
+  width: 100%;
   margin: 0 auto;
   font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .logo img {
@@ -357,15 +361,41 @@ footer .copyright {
   opacity: 30%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 578px) {
   .header nav {
     flex-direction: column;
   }
 
-  .hamberger {
-    display: block;
+  .menu-toggle {
+    position: relative;
+    margin-right: 20px;
   }
+  .menu-toggle .menu-toggle-items a {
+    color: var(--primary);
+    text-decoration: none;
 
+    padding: 3px 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+
+    background-image: linear-gradient(
+      90deg,
+      rgba(165, 215, 232, 0.42) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+  }
+  .menu-toggle .menu-toggle-items a:hover {
+    color: var(--blue);
+    background-size: 100% 100%;
+  }
+  .active {
+    position: absolute;
+    right: 5px;
+    display: flex !important;
+  }
   .header,
   .hero,
   .about .left img,
@@ -378,6 +408,22 @@ footer .copyright {
   .hero .left img,
   .about .left img {
     width: 90vw;
+  }
+
+  .header .container .left .menu-items {
+    display: none;
+  }
+  .header .container .left .menu-toggle {
+    display: block;
+  }
+  .header .menu-toggle img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-toggle-items {
+    display: flex;
+    flex-direction: column;
   }
 
   .hero {
@@ -446,15 +492,21 @@ footer .copyright {
 }
 
 @media (max-width: 1024px) {
-  .header nav,
-  header #main-nav {
+  .header .right {
     display: none;
   }
 
-  .hamberger {
-    display: block;
+  .header .container .left {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .container nav {
+    width: 100%;
   }
 
+  .container nav menu-items {
+    font-size: 0.8rem;
+  }
   .hero {
     width: 100%;
     padding-top: 10rem;
@@ -483,5 +535,11 @@ footer .copyright {
   section.skills {
     padding: 0;
     margin: 0;
+  }
+}
+
+@media (min-width: 579px) and (max-width: 780px) {
+  .container nav .left .logo {
+    display: none;
   }
 }
