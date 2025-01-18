@@ -416,8 +416,19 @@ footer .copyright {
     margin-top: 10px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    /* align-items: center; */
+  }
+
+  section.skills .skills-wrapper {
+    width: 100%;
+    gap: 2rem;
+  }
+
+  section.skills .skills-wrapper .card {
+    text-align: center;
+    font-size: 0.5rem;
   }
 
   section {
