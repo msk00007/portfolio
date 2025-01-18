@@ -342,6 +342,20 @@ footer .copyright {
   transform: translateY(-10px);
   transition: transform 0.3s;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.back-to-top img {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 10px;
+  opacity: 30%;
+}
 
 @media (max-width: 576px) {
   .header nav {
@@ -398,6 +412,14 @@ footer .copyright {
     justify-content: center;
   }
 
+  section.skills .container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
   section {
     padding: 4rem 0;
   }
@@ -450,19 +472,5 @@ footer .copyright {
   section.skills {
     padding: 0;
     margin: 0;
-  }
-
-  section.skills .container {
-    justify-content: none;
-  }
-
-  section.skills .skills-wrapper {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
   }
 }
